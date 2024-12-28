@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            color: #007bff;
+        }
+        .invoice-details {
+            margin-bottom: 20px;
+        }
+        .invoice-details p {
+            margin: 5px 0;
+        }
+        .pay-button {
+            text-align: center;
+        }
+        .pay-button button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .pay-button button:hover {
+            background: #218838;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Invoice Payment</h1>
+        </div>
+        <div class="invoice-details">
+            <p><strong>Reference ID:</strong> {{ RTPRefNo }}</p>
+            <p><strong>Amount:</strong> {{ amount }} {{ currency }}</p>
+            <p><strong>Payer:</strong> {{ payer_name }}</p>
+        </div>
+        <div class="pay-button">
+            <form action="/CompletePayment/{{ unique_id }}" method="post">
+                <button type="submit">Pay Now</button>
+            </form>
+        </div>
+        <div class="footer">
+            <p>Powered by Involink</p>
+        </div>
+    </div>
+</body>
+</html>

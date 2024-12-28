@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 50px;
+        }
+        .message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 20px;
+            border: 1px solid #f5c6cb;
+            border-radius: 8px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">
+        <h1>Payment Failed</h1>
+        <p>Sorry, there was an error processing your payment.</p>
+        <p>{{ error_message }}</p>
+    </div>
+</body>
+</html>

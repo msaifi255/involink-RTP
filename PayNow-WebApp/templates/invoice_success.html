@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Payment Invoice</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/modern.css" />
+  </head>
+  <body>
+    <div class="header-container">
+      <h1 class="company-name">{{ company_name }}</h1>
+      <table id="entity-details">
+        <tr>
+          <th>Invoice Number</th>
+          <th>{{ invoice_number }}</th>
+        </tr>
+        <tr>
+          <th>PO Number</th>
+          <th>{{ po_number }}</th>
+        </tr>
+        <tr>
+          <th>Invoice Date</th>
+          <th>{{ invoice_date }}</th>
+        </tr>
+        <tr>
+          <th>Due Date</th>
+          <th>{{ due_date }}</th>
+        </tr>
+        <tr>
+          <th>Balance Due</th>
+          <th>{{ balance_due }}</th>
+        </tr>
+      </table>
+    </div>
+    <div class="logo-client-wrapper">
+      <img class="company-logo" src="{{ logo_url }}" alt="Company Logo" />
+      <div id="client-details">
+        <span>{{ client_name }}</span>
+        <span>{{ client_address }}</span>
+        <span>{{ client_city }}</span>
+        <span>{{ client_country }}</span>
+        <span>{{ client_email }}</span>
+      </div>
+    </div>
+    <div class="table-wrapper">
+      <table id="product-table" cellspacing="0">
+        <thead>
+          <th>Item</th>
+          <th>Description</th>
+          <th>Unit Cost</th>
+          <th>Quantity</th>
+          <th>Line Total</th>
+        </thead>
+        <tbody>
+          {% for item in items %}
+          <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.description }}</td>
+            <td>{{ item.unit_cost }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.line_total }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div id="product-table-footer">
+      <div>
+        <span>Subtotal</span>
+        <span>{{ subtotal }}</span>
+      </div>
+      <div>
+        <span>Discount</span>
+        <span>{{ discount }}</span>
+      </div>
+      <div>
+        <span>Balance Due</span>
+        <span>{{ balance_due }}</span>
+      </div>
+    </div>
+    <div class="footer-wrapper">
+      <div id="company-details">
+        <span>{{ company_name }}</span>
+        <span>{{ company_email }}</span>
+        <span>{{ company_phone }}</span>
+      </div>
+      <div id="company-address">
+        <span>{{ company_address }}</span>
+        <span>{{ company_city }}</span>
+        <span>{{ company_country }}</span>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay Now</title>
+</head>
+<body>
+    <h1>Pay Now</h1>
+    <p>RTP Reference: {{ RTPRefNo }}</p>
+    <form action="/CompletePayment/{{ unique_id }}" method="post">
+        <button type="submit">Pay Now</button>
+    </form>
+</body>
+</html>
